@@ -1,6 +1,7 @@
 package kr.ac.kopo.springboot.board.dao;
 
 import kr.ac.kopo.springboot.board.vo.BoardVO;
+import kr.ac.kopo.springboot.board.vo.ReplyVO;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -29,5 +30,10 @@ public class BoardDAOImpl implements BoardDAO{
     @Override
     public void boardInsert(BoardVO board) {
         sqlSessionTemplate.insert("boardInsert", board);
+    }
+
+    @Override
+    public void insertReply(ReplyVO replyVO) {
+        sqlSessionTemplate.insert("insertReply", replyVO);
     }
 }

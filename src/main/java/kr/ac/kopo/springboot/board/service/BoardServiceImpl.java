@@ -2,6 +2,7 @@ package kr.ac.kopo.springboot.board.service;
 
 import kr.ac.kopo.springboot.board.dao.BoardDAO;
 import kr.ac.kopo.springboot.board.vo.BoardVO;
+import kr.ac.kopo.springboot.board.vo.ReplyVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,5 +30,10 @@ public class BoardServiceImpl implements BoardService{
     @Override
     public void write(BoardVO board) {
         boardDAO.boardInsert(board);
+    }
+
+    @Override
+    public void insert(ReplyVO replyVO) {
+        boardDAO.insertReply(replyVO);
     }
 }

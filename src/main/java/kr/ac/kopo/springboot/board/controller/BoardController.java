@@ -2,12 +2,14 @@ package kr.ac.kopo.springboot.board.controller;
 
 import kr.ac.kopo.springboot.board.service.BoardService;
 import kr.ac.kopo.springboot.board.vo.BoardVO;
+import kr.ac.kopo.springboot.board.vo.ReplyVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.ArrayList;
@@ -48,5 +50,10 @@ public class BoardController {
             boardService.write(board);
             return "redirect:/board";
         }
+    }
+    @ResponseBody
+    @PostMapping("/reply")
+    public void write(HttpServletRequest req, ReplyVO replyVO){
+        boardService.insert(replyVO);
     }
 }
