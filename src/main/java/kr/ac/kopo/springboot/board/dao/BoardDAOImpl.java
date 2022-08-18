@@ -36,4 +36,10 @@ public class BoardDAOImpl implements BoardDAO{
     public void insertReply(ReplyVO replyVO) {
         sqlSessionTemplate.insert("insertReply", replyVO);
     }
+
+    @Override
+    public List<ReplyVO> selectOneReply(int boardNo) {
+        List<ReplyVO> replyVOList = sqlSessionTemplate.selectList("selectOneReply", boardNo);
+        return replyVOList;
+    }
 }

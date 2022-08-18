@@ -36,4 +36,10 @@ public class BoardServiceImpl implements BoardService{
     public void insert(ReplyVO replyVO) {
         boardDAO.insertReply(replyVO);
     }
+
+    @Override
+    public List<ReplyVO> getOneReply(int boardNo) {
+        List<ReplyVO> replyVOList = boardDAO.selectOneReply(boardNo);
+        return replyVOList;
+    }
 }

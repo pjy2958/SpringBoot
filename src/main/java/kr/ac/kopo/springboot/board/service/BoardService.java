@@ -10,4 +10,5 @@ public interface BoardService {
     BoardVO getOneBoard(int boardNo);
     void write(BoardVO board);
     void insert(ReplyVO replyVO);
+    List<ReplyVO> getOneReply(int boardNo);
 }

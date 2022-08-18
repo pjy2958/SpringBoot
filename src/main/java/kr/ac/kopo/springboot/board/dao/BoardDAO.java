@@ -11,4 +11,5 @@ public interface BoardDAO {
     BoardVO selectByNo(int boardNo);
     void boardInsert(BoardVO board);
     void insertReply(ReplyVO replyVO);
+    List<ReplyVO> selectOneReply(int boardNo);
 }

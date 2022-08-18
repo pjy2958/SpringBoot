@@ -35,10 +35,9 @@ dependencies {
 
     compileOnly 'javax.servlet:javax.servlet-api'
 
-    //JSP 추가 시작
+    //JSP 추가
     implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
     implementation 'javax.servlet:jstl'
-    //JSP 추가 끝
 
     //JUnit4 추가
     testImplementation("org.junit.vintage:junit-vintage-engine") {
@@ -47,10 +46,17 @@ dependencies {
 
     implementation 'com.oracle.database.jdbc:ojdbc8'
 
+    // jackson
+//    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.3'
+//    implementation 'com.fasterxml.jackson.core:jackson-core:2.13.3'
+//    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.13.3'
+
+    // DB Wallet
     implementation 'com.oracle.database.security:oraclepki'
     implementation 'com.oracle.database.security:osdt_cert'
     implementation 'com.oracle.database.security:osdt_core'
     implementation 'com.oracle.database.jdbc:ucp'
+
     //hibernate validator engine ->null값 찾는 용도
     implementation 'org.hibernate.validator:hibernate-validator:6.2.4.Final'
 }
